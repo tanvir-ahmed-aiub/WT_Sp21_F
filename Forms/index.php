@@ -36,24 +36,39 @@
 					<td><span>Password</span></td>
 					<td>:<input type="password" name="pass"></td>
 				</tr>
+				<tr>
+					<td><span>Gender</span></td>
+					<td>:<input type="radio" name="gender" value="Male"><span>Male</span> 
+					<input type="radio" name="gender" value="Female">Female<br></td>
+				</tr>
+				<tr>
+					<td><span>Hobbies</span></td>
+					<td>: 
+					<input type="checkbox" value="Movies" name="hobbies[]"> Movies 
+					<input type="checkbox" value="Music" name="hobbies[]"> Music 
+					<input type="checkbox" value="Games" name="hobbies[]"> Games 
+					<input type="checkbox" value="Garden" name="hobbies[]"> Garden</br></td>
+				</tr>
 				
-				<span>Gender</span>: <input type="radio" name="gender" value="Male"><span>Male</span> 
-									<input type="radio" name="gender" value="Female">Female<br>
-				<span>Hobbies</span>: 
-					<input type="checkbox"> Movies 
-					<input type="checkbox"> Music 
-					<input type="checkbox"> Games 
-					<input type="checkbox"> Garden</br>
-				<span>Profession:</span>
-				<select name="profession">
-					<option disabled selected>Chose One</option>
-					<option>Teaching</option>
-					<option>Service</option>
-					<option>Business</option>
-				</select><br>
-				<span>Bio:</span><textarea name="bio"></textarea><br>
-			
-				<input type="submit" value="Submit">
+				<tr>
+					<td><span>Profession</span></td>
+					<td>
+						:<select name="profession">
+							<option disabled selected>Chose One</option>
+							<option>Teaching</option>
+							<option>Service</option>
+							<option>Business</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td><span>Bio</span></td>
+					<td>:<textarea name="bio"></textarea></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="Submit"></td>
+				</tr>
+				
 			</table>
 		</form>
 		
