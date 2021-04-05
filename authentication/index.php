@@ -5,6 +5,7 @@
 	$err_pass="";
 	$hasError=false;
 	
+	
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		if(empty($_POST["uname"])){
 			$err_uname="Username Required";
@@ -22,7 +23,7 @@
 		}
 		
 		if(!$hasError){
-			header("Location: dashboard.php");
+			
 		}
 	}
 	
@@ -42,6 +43,7 @@
 			</ul>
 		</div>-->
 		<div class="login-div">
+		<?php echo "<pre>";var_dump($users);echo "</pre>";?>
 			<table align="center">
 				<tr>
 					<td><img src="resources/user.jpg" width="150px" height="150px"></td>
