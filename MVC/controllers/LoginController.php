@@ -46,5 +46,13 @@
 		}
 		return false;
 	}
+	function checkUsername($username){
+		$query = "select * from users where username='$username'";
+		$result = get($query);
+		if(count($result) > 0){
+			return false;
+		}
+		return true;		
+	}
 
 ?>

@@ -12,8 +12,8 @@
 		</div>
 		<div class="form-group">
 			<h4 class="text">Username</h4> 
-			<input type="text" name="uname" value="<?php echo $uname;?>" class="form-control">
-			<span><?php echo $err_uname;?></span>
+			<input type="text" name="uname" onfocusout="checkUsername(this)" value="<?php echo $uname;?>" class="form-control">
+			<span id="err_uname"><?php echo $err_uname;?></span>
 		</div>
 		<div class="form-group">
 			<h4 class="text">Email</h4> 
@@ -28,6 +28,23 @@
 			<input type="submit" class="btn btn-success" name="sign_up" value="Sign Up" class="form-control">
 		</div>
 </div>
-
+<script>
+	function checkUsername(uname){
+		//alert(uname.value);
+		var name = uname.value;
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				var rs = this.responseText;
+				if(rs == "true"){
+					document.getElementById("err_uname").innerHTML = "";
+				}
+				else document.getElementById("err_uname").innerHTML = "Not a valid username";
+			}
+		};
+		xhttp.open("GET","checkusername.php?uname="+name,true);
+		xhttp.send();
+	}
+</script>
 <!--sign up ends -->
 <?php include 'main_footer.php';?>
